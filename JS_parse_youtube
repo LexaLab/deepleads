@@ -1,0 +1,48 @@
+<?php
+header('Content-Type: text/html; charset=UTF-8');
+header('X-Frame-Options: DENY');
+header('X-Content-Type-Options: nosniff');
+header('Strict-Transport-Security: max-age=31536000');
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" lang="ru-ru" dir="ltr" >
+<head>
+	<title>213</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="description" />
+	<meta name="generator" content="lex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="keywords" />
+	<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+</head>
+	<script>
+	$(document).ready(function(){ 
+	$.each($('div.video'), function(num) {
+		let id_video = $(this).data('video-id');
+		var div = $(this);
+		var img_src;
+		var img_link = 'https://i.ytimg.com/vi/'+id_video+'/maxresdefault.jpg';
+		var img = new Image();
+		img.src = img_link;
+		img.onload = function() {
+			if(this.width<1200) {
+				img_src	= 'https://i.ytimg.com/vi/'+id_video+'/hqdefault.jpg';
+			} else {
+				img_src	= img_link;
+			}
+			//console.log(img_src);
+			$(div).append('<img src="'+img_src+'">');
+		}
+		
+		
+	});
+});
+	</script>
+<body>
+	<!-- Дано -->
+	<div class="video" data-video-id="XqZsoesa55w"></div>
+	<div class="video" data-video-id="5gs2uVQZrJk"></div>
+
+</body>
+</html>
