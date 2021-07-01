@@ -1,0 +1,24 @@
+//if you need JQuery, put the logic in the event handler "document ready"
+$(document).ready(function(){ 
+	
+	let link = "https://google.com:3000/pathname/?arg=test#hash";
+	let parsed_link = new URL(link);
+		console.log(parsed_link);
+
+	});
+  /*
+URL { href: "https://google.com:3000/pathname/?arg=test#hash", origin: "https://google.com:3000", protocol: "https:", username: "", password: "", host: "google.com:3000", hostname: "google.com", port: "3000", pathname: "/pathname/", search: "?arg=test" }
+hash: "#hash"
+host: "google.com:3000"
+hostname: "google.com"
+href: "https://google.com:3000/pathname/?arg=test#hash"
+origin: "https://google.com:3000"
+password: ""
+pathname: "/pathname/"
+port: "3000"
+protocol: "https:"
+search: "?arg=test"
+searchParams: URLSearchParams {  }
+username: ""
+  
+  */
