@@ -1,0 +1,23 @@
+<?php
+header('Content-Type: text/html; charset=UTF-8');
+header('X-Frame-Options: DENY');
+header('X-Content-Type-Options: nosniff');
+header('Strict-Transport-Security: max-age=31536000');
+
+/*
+* @param string $from: Y-m-d 
+* @param string $to: Y-m-d  
+* @return string так же в формате Y-m-d 
+*/
+
+$a = '22-01-01';
+$b = '22-01-30';
+var_dump(getRandomDate($a, $b));
+function getRandomDate($from, $to) {
+	$unixDateFrom = strtotime($from);
+	$unixDateTo = strtotime($to);
+	$randomUnixTime = mt_rand($unixDateFrom, $unixDateTo);
+	$randomDate = date('Y-m-d', $randomUnixTime);
+	return $randomDate;
+}
+?>
